@@ -1,0 +1,217 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  background-color: #f0f0f0;
+  font-family: 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+}
+
+/*----Login Page----*/
+
+.centeralized {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#box {
+  width: 400px;
+  padding: 20px 40px 40px 40px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.formbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.formbox h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  margin-bottom: 5px;
+}
+
+.form input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#newuser {
+  text-align: center;
+  padding-top: 40px;
+}
+
+/*----General----*/
+
+button {
+  padding: 12px;
+  border: none;
+  background-color: #f08080;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: #a44937;
+}
+
+
+a {
+  color: #CD5B45;
+}
+
+a:hover {
+  color: #29120E;
+}
+
+/*----Home Page----*/
+.top-bar {
+  background-color: #f08080;
+  color: white;
+  padding: 10px 6.5%;
+  text-align: left;
+  display: flex;
+}
+
+#logout {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-weight: 600;
+  color: white;
+}
+
+.container {
+  display: flex;
+  padding: 20px;
+  margin: 0px 5% 0px 5%;
+}
+
+.column-a,
+.column-b {
+  padding: 36px 24px 36px 36px;
+  background-color: #FFF;
+  border-radius: 6px;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+.container a:hover {
+  color: #29120E;
+  text-decoration: underline;
+}
+
+.column-a {
+  flex: 1;
+  padding: 0px 16px 0px 16px;
+}
+
+.column-a button {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.column-b {
+  flex: 4;
+  padding-left: 20px;
+  margin: 0px 16px 0px 16px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+  flex-grow: 1;
+  height: 24px;
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 6px;
+  border-color: lightgray;
+  border-width: 1px;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+  padding-top: 30px;
+}
+
+.content-column {
+  flex: 1;
+  padding: 0px 16px 24px 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/*----Accordion----*/
+.accordion-item {
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+
+.accordion-header {
+  background-color: #eee;
+  padding: 15px;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 6px;
+  color: black;
+  text-align: left;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+}
+
+.accordion-header.active {
+  background-color: #ddd;
+}
+
+.accordion-content.active {
+  display: block;
+}
+
+/*----New Recipe & Collection----*/
+
+#contentbox {
+  padding: 20px;
+  background-color: #FFF;
+  border-radius: 6px;
+  width: 100%;
+}
+
+textarea {
+  border-color: lightgray;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: 'Segoe UI', Roboto, 'Open Sans', sans-serif;
+}
+
+.topspace {
+  margin-top: 16px;
+  margin-left: auto;
+}

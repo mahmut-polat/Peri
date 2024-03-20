@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Reciper</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="top-bar">
+    <h1><a id="logout" href="/home">Reciper</a></h1>
+    <a id="logout" href="#">Logout</a>
+  </div>
+  <div class="container">
+    <div id="contentbox">
+      <h2>New Collection</h2>
+      <div class="form">
+        <label for="collectionname">Collection Name</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form">
+        <label for="description" style="font-weight: 600;margin-top: 6px;">Recipes</label>
+        <form style="margin-top: 6px;">
+          <input type="checkbox" id="collection" name="collection1" value="Recipe" style="margin-bottom: 16px;">
+          <label for="recipe1"> Recipe Name 1</label><br>
+          <input type="checkbox" id="vehicle2" name="collection2" value="Recipe" style="margin-bottom: 16px;">
+          <label for="recipe2">Recipe Name 2</label><br>
+          <input type="checkbox" id="vehicle3" name="collection3" value="Recipe" style="margin-bottom: 16px;">
+          <label for="recipe3">Recipe Name 3</label>
+        </form>
+        <div class="topspace">
+          <button type="submit">Cancel</button>
+          <button type="submit">Save Collection</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

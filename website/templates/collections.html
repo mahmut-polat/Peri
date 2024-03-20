@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Reciper</title>
+  <link href="/static/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="top-bar">
+    <h1><a id="logout" href="/home">Reciper</a></h1>
+    <a id="logout" href="/logout">Logout</a>
+  </div>
+  <div class="container">
+    <div id="contentbox">
+      <h2>New Collection</h2>
+      <form method="POST" action="/collection">
+      <div class="form">
+        <label for="collectionname">Collection Name</label>
+        <input type="text" id="collection_name" name="collection_name">
+      </div>
+      <div class="form">
+
+        <label for="description" style="font-weight: 600;margin-top: 6px;">Recipes</label>
+        {% for recipe in recipes %}
+              <input type="checkbox" id="recipes" name="recipes" value="{{ recipe.id }}" style="margin-bottom: 16px;">
+              <label for="recipe1">{{ recipe.recipe_name }}</label><br>
+        {% endfor %}
+     
+        <div class="topspace">
+          <button type="submit">Save Collection</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div id="contentbox">
+  <ul>
+    {% for collection in collections %}
+        <li>
+            <p>Collection Name: {{ collection.collection_name }}</p>
+            <p>User ID: {{ collection.user_id }}</p>
+            <p>Recipes:</p>
+            <ul>
+                {% for CollectionRecipe in collection.collections %}
+                    <li>{{ CollectionRecipe.recipes.recipe_name }}</li>
+                {% endfor %}
+            </ul>
+            <form method="POST" action="/collection/{{ collection.id }}">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+</div>
+</div>
+</body>
+
+</html>

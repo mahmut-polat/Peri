@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Reciper</title>
+  <link href="static/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="top-bar">
+    <h1><a id="logout" href="/home">Reciper</a></h1>
+    <a id="logout" href="/logout">Logout</a>
+  </div>
+  <div class="container">
+    <div class="column-a">
+      <h3>Menu</h3>
+      <form action="/recipe" class="inline">
+      <button type="submit">Add New Recipe</button>
+    </form>
+    <form action="/collection" class="inline">
+      <button type="submit">Add New Collection</button>
+    </form>
+    </div>
+    <div class="column-b">
+      <div class="search-container">
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
+        <div>
+          <input type="radio" id="category1" name="category" value="category1">
+          <label for="category1">Recipes</label>
+          <input type="radio" id="category2" name="category" value="category2">
+          <label for="category2">Collections</label>
+        </div>
+      </div>
+      <div class="content">
+        <div class="content-column">
+          <h3>My Recipes</h3>
+          
+          <div class="accordion-container">
+          {% for recipe in user.recipes %}
+          <div class="accordion-item">
+            <button class="accordion-header">{{ recipe.recipe_name }}</button>
+            <div class="accordion-content">
+              <p>{{ recipe.data }}</p>
+            </div>
+          </div>
+          {% endfor %}
+          </div>
+       
+        </div>
+        <div class="content-column">
+          <h3>My Collections</h3>
+          <div class="accordion-container">
+            {% for collection in user.collections %}
+            <div class="accordion-item">
+              <button class="accordion-header">{{collection.collection_name}}</button>
+              <div class="accordion-content">
+                {% for collectionRecipes in collection.collections %}
+                <p>{{collectionRecipes.recipes.recipe_name}}</p>                 
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="static/script.js"></script>
+</body>
+
+</html>

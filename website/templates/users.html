@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+</head>
+<body>
+    <h1>User Management</h1>
+    <form method="POST" action="/user">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <label for="first_name">First Name:</label><br>
+        <input type="text" id="first_name" name="first_name"><br>
+        <button type="submit">Create User</button>
+    </form>
+
+    <ul>
+        {% for user in users %}
+            <li>
+                <p>Email: {{ user.email }}</p>
+                <p>First Name: {{ user.first_name }}</p>
+                <form method="DELETE" action="/user/{{ user.id }}">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
